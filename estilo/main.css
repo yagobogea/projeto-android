@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --cor0:#c5ebd6;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', 'cursive';
+}
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo:after {
+    content: '\00A0\1F517';
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+}
+
+header > h1 {
+    padding-top: 35px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.411);
+}
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.411);
+}
+
+nav {
+    padding: 10px;
+    box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.411);
+    text-align: left;
+}
+
+nav > a {
+    color: var(--cor1);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 1s; /* dá um efeito de fade, e o segundo dita quando dura esse fade */
+}
+
+nav > a:hover {
+    background-color: var(--cor4);
+    color: var(--cor3);
+}
+
+main {
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    max-width: 1000px;
+    min-width: 300px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.425);
+    border-radius: 0px 0px 5px 5px;
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+}
+
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em; /* dita o espaçamento entre linhas */
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a {
+    background-color: var(--cor1);
+    padding: 2px 4.5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor4);
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor3);
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pq {
+    max-width: 350px;
+    display: block; /* uma imagem não é um bloco, então para centraliza-la com margin: auto;  é necessário mudar o seu display para block */
+    margin: auto;
+}
+
+/* mudando tamanho, posição e deixando o vídeo adaptável à telas */
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px; /* faz com que o background se cole as "paredes" da main */
+    padding: 20px;
+    padding-bottom: 56.5%;
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute; /* usando posicionamento absoluto se pode mexer no top, left, width e height do vídeo */
+    top: 5%;
+    left:5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.280);
+}
+
+aside > ul {
+    list-style-position: inside; /* indica onde a lista deve se posicionar, já está dentro do <aside>, se posiciona dentro do mesmo */
+    columns: 2; /* divide a lista em colunas, o número dita quantas colunas */
+    list-style-type: '\2714\00A0\00A0'; /* modifica o estilo da lista, ao invés de usar o padrão (disc, circle, square). Esse código é o código do emoji que coloquei antes da lista, É NECESSÁRIO ter essa barra contra \, esse 00A0 é um espacinho invisível em forma de código. */
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+}
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
